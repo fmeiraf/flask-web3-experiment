@@ -1,0 +1,54 @@
+<!-- MVP.css quickstart template: https://github.com/andybrewer/mvp/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://via.placeholder.com/70x70">
+    <link rel="stylesheet" href={{url_for('static', filename='mvp.css')}}>
+
+    <meta charset="utf-8">
+    <meta name="description" content="My description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask Web3 Test</title>
+</head>
+
+<body>
+
+    <main>
+
+        <section>
+            <form>
+                <header>
+                    <h2>Blockchain Message Recorder</h2>
+                </header>
+                <label for="input1">Type your message:</label>
+                <input type="text" id="input" name="input1" size="40" placeholder="Hello Ethereum!">
+                <button id='sub' type="submit">Submit</button>
+            </form>
+
+            <aside>
+                <h3>This is your recorded message:</h3>
+                <p id="message"> > </p>
+
+            </aside>
+
+        </section>
+
+    </main>
+    <footer>
+        <hr>
+        <p>
+            This a simple teste for the Web3 + Flask!
+        </p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src={{url_for('static', filename='web3.min.js')}}></script>
+    <script src={{url_for('static', filename='truffle-contract.js')}}></script>
+    <script src={{url_for('static', filename='app.js')}}>
+    </script>
+</body>
+
+</html>

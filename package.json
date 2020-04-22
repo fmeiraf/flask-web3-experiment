@@ -1,0 +1,25 @@
+{
+  "name": "flask-web3-experiment",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run-network": "npx ganache-cli",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoMeiraFilho/flask-web3-experiment.git"
+  },
+  "author": "Fernando Meira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FernandoMeiraFilho/flask-web3-experiment/issues"
+  },
+  "homepage": "https://github.com/FernandoMeiraFilho/flask-web3-experiment#readme",
+  "devDependencies": {
+    "ganache-cli": "^6.9.1",
+    "truffle": "^5.1.22",
+    "web3": "^1.2.6"
+  }
+}
