@@ -3,7 +3,6 @@ App = {
     contracts: {},
   
     init: async function () {
-
       return await App.initWeb3();
     },
   
@@ -28,13 +27,12 @@ App = {
         App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       }
       web3 = new Web3(App.web3Provider);
-  
-  
+
       return App.initContract();
     },
   
     initContract: function () {
-      $.getJSON('greeter.json', function (data) {
+      $.getJSON('../static/greeter.json', function (data) {
         // Get the necessary contract artifact file and instantiate it with truffle-contract
         var greeterArtifct = data;
         App.contracts.greeter = TruffleContract(greeterArtifct);
@@ -61,7 +59,7 @@ App = {
   
         return greeterInstance.getGreeting.call();
       }).then(function (message) {
-            $('#message').html(message);
+            $('#message').text(message);
       }).catch(function (err) {
         console.log(err.message);
       });
@@ -71,7 +69,7 @@ App = {
     writeMessage: function (event) {
      
   
-      var messageContent = $('#input').value();
+      var messageContent = $('#input').val();
   
       var greeterInstance;
   
@@ -86,7 +84,7 @@ App = {
           greeterInstance = instance;
   
           // Execute adopt as a transaction by sending account
-          return greeterInstance.adopt(messageContent, {
+          return greeterInstance.greet(messageContent, {
             from: account
           });
         }).then(function (result) {
@@ -100,8 +98,6 @@ App = {
   
   };
   
-  $(function () {
-    $(window).load(function () {
-      App.init();
+$(window).on('load', function () {
+    App.init();
     });
-  });

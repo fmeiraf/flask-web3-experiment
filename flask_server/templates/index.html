@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <meta name="description" content="My description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js"></script>
 
     <title>Flask Web3 Test</title>
 </head>
@@ -19,14 +20,14 @@
     <main>
 
         <section>
-            <form>
+            <div>
                 <header>
                     <h2>Blockchain Message Recorder</h2>
                 </header>
                 <label for="input1">Type your message:</label>
                 <input type="text" id="input" name="input1" size="40" placeholder="Hello Ethereum!">
                 <button id='sub' type="submit">Submit</button>
-            </form>
+            </div>
 
             <aside>
                 <h3>This is your recorded message:</h3>
@@ -44,11 +45,11 @@
         </p>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
     <script src={{url_for('static', filename='web3.min.js')}}></script>
     <script src={{url_for('static', filename='truffle-contract.js')}}></script>
-    <script src={{url_for('static', filename='app.js')}}>
-    </script>
+    <!-- <script src={{url_for('static', filename='teste.js')}}></script> -->
+    <script src={{url_for('static', filename='app.js')}}></script>
 </body>
 
 </html>
